@@ -4,8 +4,11 @@
 
 'use strict';
 Template.home.helpers({
-	buildItems: function () {
-		return Collections.Builds.find({}, {sort: {name: 1}});
+	build: function () {
+		return Collections.Builds.findOne({_id: this.buildId});
+	},
+	buildOrder: function () {
+		return Collections.MyBuildDisplay.find({}, {sort: {sort: 1}});
 	}
 });
 
